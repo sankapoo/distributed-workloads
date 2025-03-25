@@ -139,7 +139,7 @@ def collate_fn(batch, tokenizer, block_size, device):
 def get_pretrained_path(model_id: str):
     mirror_uri = get_mirror_link(model_id)
     ckpt_path, _ = get_checkpoint_and_refs_dir(
-        model_id=model_id, bucket_uri=mirror_uri, s3_sync_args=["--no-sign-request"]
+        model_id=model_id, bucket_uri=mirror_uri, s3_sync_args=[] # Sandeep
     )
     return ckpt_path
 
@@ -250,7 +250,7 @@ def training_function(kwargs: dict):
     lock_file = str(base_path / f'{model_id.replace("/",  "--")}.lock')
     with FileLock(lock_file):
         download_model(
-            model_id=model_id, bucket_uri=bucket_uri, s3_sync_args=["--no-sign-request"]
+            model_id=model_id, bucket_uri=bucket_uri, s3_sync_args=[]  # Sandeep
         )
 
     # Sample hyperparameters for learning rate, batch size, seed and a few other HPs
@@ -720,8 +720,8 @@ def main():
         ),
         scaling_config=train.ScalingConfig(
             num_workers=args.num_devices,
-            use_gpu=True,
-            resources_per_worker={"GPU": 1},
+            use_gpu=True, # Sandeep made changes from True to False
+            resources_per_worker={"GPU": 1},  # Sandeep made changes from resources_per_worker={"GPU": 1}
         ),
         datasets={"train": train_ds, "valid": valid_ds},
         dataset_config=ray.train.DataConfig(datasets_to_split=["train", "valid"]),
