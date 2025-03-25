@@ -1,5 +1,8 @@
 # Links
+https://developers.redhat.com/articles/2024/09/30/fine-tune-llama-openshift-ai#
+
 https://us-east-1.console.aws.amazon.com/s3/buckets/demo-dw-ray?region=us-east-1&bucketType=general&tab=permissions  -- Bucket Policy
+
 https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/users/details/rhoai-user?section=permissions -- IAM Policy
 
 # Fine-Tune Llama Models with Ray and DeepSpeed on OpenShift AI
