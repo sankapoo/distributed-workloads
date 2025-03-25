@@ -1,3 +1,7 @@
+# Links
+https://us-east-1.console.aws.amazon.com/s3/buckets/demo-dw-ray?region=us-east-1&bucketType=general&tab=permissions  -- Bucket Policy
+https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/users/details/rhoai-user?section=permissions -- IAM Policy
+
 # Fine-Tune Llama Models with Ray and DeepSpeed on OpenShift AI
 
 This example demonstrates how to fine-tune LLMs with Ray on OpenShift AI, using HF Transformers, Accelerate, PEFT (LoRA), and DeepSpeed, for Llama models.
